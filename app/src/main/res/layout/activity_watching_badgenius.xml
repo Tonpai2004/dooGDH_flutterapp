@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/watchingRoot"
+    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ปุ่มย้อนกลับ -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="Back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- ส่วนของการเล่นวิดีโอ -->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ปุ่ม "รับชมภาพยนตร์" -->
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="กดรับชมภาพยนตร์"
+        android:backgroundTint="#9D161515"
+        android:fontFamily="@font/mitr"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/videoView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- ข้อความใต้ปุ่ม "รับชมภาพยนตร์" -->
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="หมุนโทรศัพท์ในแนวนอน ก่อนกดรับชม"
+        android:fontFamily="@font/mitrbold"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/playButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ชื่อภาพยนตร์ -->
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ฉลาดเกมส์โกง"
+        android:textSize="24sp"
+        android:fontFamily="@font/mitr"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/messageText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- เรื่องย่อภาพยนตร์ -->
+
+    <TextView
+        android:id="@+id/movieDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mitr"
+        android:text="ขอต้อนรับทุกคนเข้าสู่ “ธุรกิจกลางสนามสอบ” ของ 'ลิน' นักเรียนทุนเจ้าของเกรดเฉลี่ย 4.00 ทุกปีการศึกษา ธุรกิจที่มีจุดเริ่มต้นจากการช่วยเพื่อนสนิทอย่าง 'เกรซ' เด็กกิจกรรมตัวยงแต่ผลการเรียนย่ำแย่ และ 'พัฒน์' เด็กบ้านรวยที่คิดว่าเงินซื้อได้ทุกอย่าง ด้วยการแชร์คำตอบกลางห้องสอบ จนกลายเป็นวงการลอกขนาดใหญ่ ที่นักเรียนหลายคนในโรงเรียนยินดีจ่ายค่าตอบแทนแบบสูงลิบ แลกกับการได้รับคำตอบจากอัจฉริยะอย่างลิน เงินในบัญชีของลินเพิ่มขึ้นเรื่อยๆจากธุรกิจการโกงสอบในโรงเรียน จากหลักหมื่นเป็นหลักแสน จนวันหนึ่ง ลินก็มีโอกาสที่จะอัพเงินในบัญชีให้แตะหลักล้าน เมื่อพัฒน์และเกรซยื่นข้อเสนอสุดท้าทายให้เธอ นั่นคือ การโกงสอบ STIC ซึ่งเป็นการสอบเพื่อใช้คะแนนยื่นเข้ามหาวิทยาลัยชั้นนำระดับโลก ที่นักเรียนทุกประเทศต้องสอบในเวลาเดียวกัน โอกาสในการลอกให้รอดเท่ากับศูนย์ แต่ลินก็ยอมเสี่ยงเพื่อแลกกับเงินล้าน ด้วยการบินไปสอบในประเทศที่เวลาเร็วกว่าเมืองไทย เพื่อที่จะได้เห็นข้อสอบก่อน และส่งคำตอบกลับมาให้ลูกค้าในเมืองไทย ปัญหาเดียวก็คือ เธอต้องการคนฉลาดอีกหนึ่งคนมาช่วยให้ภารกิจการโกงครั้งนี้สำเร็จ และคนๆนั้นก็คือ 'แบงค์' นักเรียนทุนคู่แข่งของเธอ ผู้เกลียดการโกงเป็นชีวิตจิตใจ ลินจะทำอย่างไรให้แบงค์ตกลงร่วมมือกับเธอ และเกมส์โกงข้ามโลกนี้จะจบลงอย่างไร..."
+        android:textSize="12sp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle" />
+
+    <!-- ปุ่ม อ่านเพิ่มเติม / ซ่อน -->
+    <TextView
+        android:id="@+id/toggleReadMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="อ่านเพิ่มเติม"
+        android:textColor="@color/black"
+        android:fontFamily="@font/mitrbold"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDescription"/>
+
+    <!-- ส่วนเลื่อนของนักแสดงและผู้กำกับ -->
+
+    <TextView
+        android:id="@+id/castAndDirectorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/mitr"
+        android:text="นักแสดงและผู้กำกับ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDescription" />
+
+    <HorizontalScrollView
+        android:id="@+id/castAndDirectorScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/castAndDirectorTitle">
+
+        <!-- LinearLayout ภายใน HorizontalScrollView เพื่อใส่ภาพนักแสดงและผู้กำกับ -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="16dp">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/baddir"
+                    android:contentDescription="Director 1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นัฐวุฒิ พูนพิริยะ (ผู้กำกับ)"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="16dp">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/bad1"
+                    android:contentDescription="Actor 1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ชุติมณฑณ์ จึงเจริญสุขยิ่ง"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/bad2"
+                    android:contentDescription="Actor 2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ชานน สันตินธรกุล"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/bad3"
+                    android:contentDescription="Actor 3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="อิษยา ฮอสุวรรณ"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/bad4"
+                    android:contentDescription="Actor 4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ธีรดนย์ ศุภพันธุ์ภิญโญ"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/bad5"
+                    android:contentDescription="Actor 5"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ธเนศ วรากุลนุเคราะห์"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- ปุ่ม "ออกจากโหมดเต็มจอ" -->
+    <ImageButton
+        android:id="@+id/exitFullScreenButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_crop_free_24"
+        android:contentDescription="Exit Full Screen"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:visibility="gone" /> <!-- ซ่อนตอนแรก -->
+</androidx.constraintlayout.widget.ConstraintLayout>
+

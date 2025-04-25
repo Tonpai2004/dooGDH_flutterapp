@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/watchingRoot"
+    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ปุ่มย้อนกลับ -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="Back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- ส่วนของการเล่นวิดีโอ -->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ปุ่ม "รับชมภาพยนตร์" -->
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="กดรับชมภาพยนตร์"
+        android:backgroundTint="#9D161515"
+        android:fontFamily="@font/mitr"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/videoView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- ข้อความใต้ปุ่ม "รับชมภาพยนตร์" -->
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="หมุนโทรศัพท์ในแนวนอน ก่อนกดรับชม"
+        android:fontFamily="@font/mitrbold"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/playButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- ชื่อภาพยนตร์ -->
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="เพื่อน(ไม่)สนิท"
+        android:textSize="24sp"
+        android:fontFamily="@font/mitr"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/messageText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- เรื่องย่อภาพยนตร์ -->
+
+    <TextView
+        android:id="@+id/movieDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mitr"
+        android:text="คุณเคยมีเพื่อน(ไม่)สนิท ที่ยังติดอยู่ในความทรงจำมั้ย? เมื่อ ‘เป้’ เด็ก ม.6 ที่กำลังถูกพ่อกดดันในการสอบเข้ามหา’ลัย ได้รู้ข่าวการรับนักศึกษาเข้าเรียนโดยการทำหนังสั้นส่งประกวด เขาจึงเกิดไอเดียในการนำเรื่องของ ‘โจ’ เพื่อน(ไม่)สนิทที่นั่งโต๊ะติดกัน แต่ดันโชคร้ายเสียชีวิตจากอุบัติเหตุ มาทำเป็นหนังสั้นด้วยความเชื่อที่ว่า 'ทำหนังเกี่ยวกับคนที่จากไป ยังไงแม่งก็ซึ้ง' แต่เรื่องก็ไม่ง่ายอย่างที่คิด เพราะเป้ไม่มีความรู้เกี่ยวกับการทำหนังเลยแม้แต่น้อย! แถมยังเจอขวากหนามในคราบมนุษย์อย่าง ‘โบเก้’ เพื่อนสนิทตัวจริงของโจ ที่โชว์สปิริตเสนอตัว ขอมาช่วยทำหนังสั้นเรื่องนี้แบบที่เป้ไม่รู้ว่าจะปฏิเสธมันยังไงดี ภารกิจวายป่วงในการทำหนังสั้นที่มีอนาคตของเป้เป็นเดิมพันจึงเริ่มต้นขึ้น โดยได้รับความช่วยเหลือจากคณะเด็กเนิร์ดหนังประจำห้องโสต ท่ามกลางการรับรู้ของคนทั้งโรงเรียนและแรงกดดันจากครอบครัวของโจ ที่เฝ้ารอชมผลงานหนังสั้นสุดประทับใจของคนที่จากไป แต่ในเวลาเดียวกัน การถ่ายหนังสั้นให้เพื่อนไม่สนิทของเป้ครั้งนี้ กลับทำให้เขาได้ค้นพบ 'ความลับ' อะไรบางอย่างที่โจซ่อนเอาไว้ ซึ่งอาจจะกระทบต่อความทรงจำ และก้อนความสัมพันธ์ที่อยู่ในใจ ซึ่งพวกเขาเคยมีให้เพื่อนคนสำคัญคนนี้ไปตลอดกาล"
+        android:textSize="12sp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle" />
+
+    <!-- ปุ่ม อ่านเพิ่มเติม / ซ่อน -->
+    <TextView
+        android:id="@+id/toggleReadMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="อ่านเพิ่มเติม"
+        android:textColor="@color/black"
+        android:fontFamily="@font/mitrbold"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDescription"/>
+
+    <!-- ส่วนเลื่อนของนักแสดงและผู้กำกับ -->
+
+    <TextView
+        android:id="@+id/castAndDirectorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/mitr"
+        android:text="นักแสดงและผู้กำกับ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDescription" />
+
+    <HorizontalScrollView
+        android:id="@+id/castAndDirectorScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/castAndDirectorTitle">
+
+        <!-- LinearLayout ภายใน HorizontalScrollView เพื่อใส่ภาพนักแสดงและผู้กำกับ -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="16dp">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/nfd"
+                    android:contentDescription="Director 1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="อัตตา เหมวดี (ผู้กำกับ)"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="16dp">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/nf1"
+                    android:contentDescription="Actor 1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="อันโทนี่ บุยเซอเรท์"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/nf2"
+                    android:contentDescription="Actor 2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="พิสิฐพล เอกพงศ์พิสิฐ"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/nf3"
+                    android:contentDescription="Actor 3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ธิติยา จิระพรศิลป์"
+                    android:fontFamily="@font/mitr"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- ปุ่ม "ออกจากโหมดเต็มจอ" -->
+    <ImageButton
+        android:id="@+id/exitFullScreenButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_crop_free_24"
+        android:contentDescription="Exit Full Screen"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:visibility="gone" /> <!-- ซ่อนตอนแรก -->
+</androidx.constraintlayout.widget.ConstraintLayout>
+

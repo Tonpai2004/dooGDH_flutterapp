@@ -1,0 +1,285 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainComingSoon">
+
+    <!-- 🔒 Top Bar อยู่ติดบนตลอด -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/backHome"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/arrow_back"
+            android:contentDescription="Backhome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 🔻 เนื้อหา Scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="always"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ด้านในเป็น Layout เดิม -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 🔽 รูปภาพแสดงโลโก้ GDH -->
+            <ImageView
+                android:id="@+id/gdhImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/gdh"
+                android:contentDescription="GDH Logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 🟦 หัวข้อเกี่ยวกับ GDH -->
+            <TextView
+                android:id="@+id/aboutTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="เกี่ยวกับ GDH"
+                android:fontFamily="@font/mitrbold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#F44336"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
+                app:layout_constraintTop_toBottomOf="@id/gdhImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 📄 เนื้อหาเกี่ยวกับ GDH -->
+            <TextView
+                android:id="@+id/aboutContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="บริษัท จีดีเอช ห้าห้าเก้า จำกัด เป็นบริษัทผลิตภาพยนตร์ไทยที่เกิดจากความร่วมมือกันของ บริษัท จีเอ็มเอ็ม แกรมมี่ จำกัด (มหาชน) และ บริษัท หับโห้หิ้น บางกอก จำกัด ก่อตั้งขึ้นเมื่อวันที่ 5 มกราคม 2559 โดยมีผู้ถือหุ้นประกอบด้วยผู้บริหาร ผู้กำกับภาพยนตร์ นักแสดง และพนักงานในบริษัท จำนวน 59 รายชื่อ ซึ่งพ้องกับวันที่และปีที่ก่อตั้งบริษัท"
+                android:textSize="12sp"
+                android:fontFamily="@font/mitr"
+                android:lineSpacingExtra="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintTop_toBottomOf="@id/aboutTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <!-- 🔽 รูปภาพเพิ่มเติม -->
+            <ImageView
+                android:id="@+id/gdhImage2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/doo_gdh_logo"
+                android:contentDescription="GDH Team"
+                app:layout_constraintTop_toBottomOf="@id/aboutContent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 🟦 หัวข้อเพิ่มเติม -->
+            <TextView
+                android:id="@+id/aboutTitle2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="เกี่ยวกับ dooGDH"
+                android:fontFamily="@font/mitrbold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#F44336"
+                android:gravity="center"
+                android:layout_marginTop="1dp"
+                app:layout_constraintTop_toBottomOf="@id/gdhImage2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 📄 เนื้อหาของหัวข้อนี้ -->
+            <TextView
+                android:id="@+id/aboutContent2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="GDH เป็นค่ายภาพยนตร์ไทยที่ได้รับความนิยมสูงสุดในช่วงทศวรรษที่ผ่านมา ด้วยผลงานที่โดดเด่นทั้งในด้านเนื้อเรื่อง โปรดักชัน และการสื่อสารอารมณ์ให้เข้าถึงผู้ชม จึงเกิดแนวคิดในการสร้างแพลตฟอร์มเฉพาะที่รวมรวมผลงานเหล่านั้นเอาไว้ เพื่อให้ผู้ชมสามารถรับชมและสนับสนุนผลงานของทีมงาน GDH ได้อย่างใกล้ชิดและถูกต้องตามลิขสิทธิ์ และนี่คือที่มาของ 'dooGDH' "
+                android:textSize="12sp"
+                android:fontFamily="@font/mitr"
+                android:lineSpacingExtra="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/aboutTitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 🟦 หัวข้อเพิ่มเติม -->
+            <TextView
+                android:id="@+id/contacttext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="ติดต่อพวกเรา"
+                android:fontFamily="@font/mitrbold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#3F51B5"
+                android:gravity="center"
+                android:layout_marginTop="80dp"
+                app:layout_constraintTop_toBottomOf="@id/aboutContent2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <WebView
+                android:id="@+id/mapWebView"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/contacttext"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="WebViewLayout" />
+
+            <TextView
+                android:id="@+id/contactPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="เบอร์โทรศัพท์ : 02-123-4567"
+                android:textSize="14sp"
+                android:fontFamily="@font/mitr"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/mapWebView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/contactEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="อีเมล: support@gdh.co.th"
+                android:textSize="14sp"
+                android:fontFamily="@font/mitr"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/contactPhone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/contactSocialTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="ติดตามเราได้ที่"
+                android:fontFamily="@font/mitrbold"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#3F51B5"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/contactEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Facebook -->
+            <TextView
+                android:id="@+id/contactFacebook"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Facebook: GDH"
+                android:textSize="14sp"
+                android:fontFamily="@font/mitr"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/contactSocialTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <!-- Twitter -->
+            <TextView
+                android:id="@+id/contactTwitter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Twitter: @gdh559"
+                android:textSize="14sp"
+                android:fontFamily="@font/mitr"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/contactFacebook"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <!-- Instagram -->
+            <TextView
+                android:id="@+id/contactInstagram"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Instagram: gdh559"
+                android:textSize="14sp"
+                android:fontFamily="@font/mitr"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/contactTwitter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <!-- YouTube -->
+            <TextView
+                android:id="@+id/contactYouTube"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="YouTube: GDH"
+                android:textSize="14sp"
+                android:fontFamily="@font/mitr"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/contactInstagram"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                app:layout_constraintTop_toBottomOf="@id/contactYouTube"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

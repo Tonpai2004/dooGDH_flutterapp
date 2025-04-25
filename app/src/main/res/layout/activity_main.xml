@@ -1,0 +1,461 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 🔹 TOP BAR -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBar"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:background="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- LOGO -->
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/doo_gdh_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- ABOUT BUTTON (วางไว้ขวาสุด) -->
+            <ImageButton
+                android:id="@+id/aboutButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/about2"
+                android:contentDescription="About"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- COMINGSOON BUTTON (วางไว้ทางซ้ายของ aboutButton โดยเว้น 8dp) -->
+            <ImageButton
+                android:id="@+id/comingButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="ComingSoon"
+                android:src="@drawable/comingsoon"
+                app:layout_constraintEnd_toStartOf="@id/aboutButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- 🔻 POSTER + BUTTON -->
+        <FrameLayout
+            android:id="@+id/posterFrame"
+            android:layout_width="333dp"
+            android:layout_height="450dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintVertical_bias="0.1">
+
+            <!-- 🔹 Movie Poster -->
+
+            <!-- 🔸 Watch & My List Buttons -->
+            <ImageView
+                android:id="@+id/moviePoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/runrun" />
+
+            <LinearLayout
+                android:id="@+id/buttonContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <!-- ปุ่มรับชม -->
+                <Button
+                    android:id="@+id/watchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#ABFFFFFF"
+                    android:textSize="17dp"
+                    android:fontFamily="@font/mitrbold"
+                    android:text="► กดรับชมภาพยนตร์ ทีนี่"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="12dp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- 🔻 TOP MOVIE LIST -->
+        <TextView
+            android:id="@+id/topMoviesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/mitr"
+            android:text="อันดับสูงสุดของวันนี้"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/posterFrame"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.widget.HorizontalScrollView
+            android:id="@+id/movieScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/topMoviesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+                <!-- Movie Poster 1 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/moviePoster1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/htmmbgd"
+                        android:scaleType="centerCrop" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="#A3FFFFFF"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/mitrbold"
+                        android:textSize="130dp"
+                        android:padding="4dp" />
+                </RelativeLayout>
+
+                <!-- Movie Poster 2 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/moviePoster2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/the_paradisr_of_thrones"
+                        android:scaleType="centerCrop"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textColor="#A3FFFFFF"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/mitrbold"
+                        android:textSize="130dp"
+                        android:padding="4dp" />
+                </RelativeLayout>
+
+                <!-- Movie Poster 3 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/moviePoster3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/notfriends"
+                        android:scaleType="centerCrop"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textColor="#A3FFFFFF"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/mitrbold"
+                        android:textSize="130dp"
+                        android:padding="4dp" />
+                </RelativeLayout>
+
+                <!-- Movie Poster 4 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/moviePoster4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/hfr"
+                        android:scaleType="centerCrop"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textColor="#A3FFFFFF"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/mitrbold"
+                        android:textSize="130dp"
+                        android:padding="4dp" />
+                </RelativeLayout>
+
+                <!-- Movie Poster 5 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp">
+                    <ImageView
+                        android:id="@+id/moviePoster5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/lafs_preem"
+                        android:scaleType="centerCrop" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textColor="#A3FFFFFF"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/mitrbold"
+                        android:textSize="130dp"
+                        android:padding="4dp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </android.widget.HorizontalScrollView>
+
+        <!-- 🔻 RECOMMENDED MOVIES -->
+        <TextView
+            android:id="@+id/recommendedMoviesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/mitr"
+            android:text="ภาพยนตร์แนะนำ"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/topMoviesTitle"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.widget.HorizontalScrollView
+            android:id="@+id/recommendedMovieScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/recommendedMoviesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+                <!-- Movie Poster 1 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:id="@+id/recommendedMoviePoster1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/badgenius" />
+                </RelativeLayout>
+
+                <!-- Movie Poster 2 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/recommendedMoviePoster2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/brooftheyear"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <!-- Movie Poster 3 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/recommendedMoviePoster3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/fanday"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <!-- Movie Poster 4 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/recommendedMoviePoster4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/conheartist"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <!-- Movie Poster 5 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp">
+                    <ImageView
+                        android:id="@+id/recommendedMoviePoster5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/themedium"
+                        android:scaleType="centerCrop" />
+                </RelativeLayout>
+            </LinearLayout>
+        </android.widget.HorizontalScrollView>
+
+        <!-- 🔻 FANTASY MOVIES -->
+        <TextView
+            android:id="@+id/fantasyMoviesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/mitr"
+            android:text="ภาพยนตร์เหนือจินตนาการ"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/recommendedMovieScrollView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.widget.HorizontalScrollView
+            android:id="@+id/fantasyMovieScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/fantasyMoviesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Fantasy Movie Poster 1 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:id="@+id/fantasyMoviePoster1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/themedium" />
+                </RelativeLayout>
+
+                <!-- Fantasy Movie Poster 2 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/fantasyMoviePoster2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/hfr"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <!-- Fantasy Movie Poster 3 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/fantasyMoviePoster3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/runrun"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <!-- Fantasy Movie Poster 4 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    android:layout_marginEnd="16dp">
+                    <ImageView
+                        android:id="@+id/fantasyMoviePoster4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/homestay"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <!-- Fantasy Movie Poster 5 -->
+                <RelativeLayout
+                    android:layout_width="120dp"
+                    android:layout_height="180dp">
+                    <ImageView
+                        android:id="@+id/fantasyMoviePoster5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/destiny"
+                        android:scaleType="centerCrop" />
+                </RelativeLayout>
+            </LinearLayout>
+        </android.widget.HorizontalScrollView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
